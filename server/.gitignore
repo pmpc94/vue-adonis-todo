@@ -12,4 +12,4 @@ tmp
 database/development.sqlite
 
 # MacOS metadata files
-*.DS_Store
+.DS_Store
