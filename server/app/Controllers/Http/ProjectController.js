@@ -24,7 +24,7 @@ class ProjectController {
 
   async destroy({ auth, request, params})  {
     const user = await auth.getUser();
-    const id = params.id //same as const { id } = params;
+    const id = params.id; //same as const { id } = params;
     const project = await Project.find(id);
     AuthorizationService.verifyPermission(project, user);
     await project.delete();
