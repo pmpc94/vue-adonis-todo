@@ -6,10 +6,14 @@ export default {
   state: {
     registerEmail: 'hello',
     registerPassword: 'world',
-    registerError: '',
-    token: ''
+    registerError: null,
+    token: null
   },
   actions: {
+    logout({ commit }) {
+      commit('setToken', null);
+      router.push('/login');
+    },
     register({ commit, state }) {
       commit('setRegisterError', null);
 

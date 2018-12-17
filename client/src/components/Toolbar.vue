@@ -11,19 +11,24 @@
   <v-toolbar-items class="hidden-sm-and-down">
     <v-btn v-if="!isLoggedIn" to="/register" flat><v-icon class="mr-2">account_box</v-icon>Register</v-btn>
     <v-btn v-if="!isLoggedIn" flat><v-icon class="mr-2">fingerprint</v-icon>Login</v-btn>
-    <v-btn v-if="isLoggedIn" flat><v-icon class="mr-2">exit_to_app</v-icon>Logout</v-btn>
+    <v-btn v-if="isLoggedIn" @click="logout()" flat><v-icon class="mr-2">exit_to_app</v-icon>Logout</v-btn>
     <v-btn flat><v-icon class="mr-2">ondemand_video</v-icon>How this was Made</v-btn>
   </v-toolbar-items>
 </v-toolbar>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   computed: {
     ...mapGetters('authentication', [
       'isLoggedIn'
+    ])
+  },
+  methods: {
+    ...mapActions('authentication', [
+      'logout'
     ])
   }
 };
