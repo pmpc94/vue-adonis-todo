@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <app-toolbar></app-toolbar>
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
@@ -9,6 +10,17 @@
   </div>
 </v-app>
 </template>
+
+<script type="text/javascript">
+import Toolbar from '@/components/Toolbar.vue';
+
+export default {
+  components: {
+    appToolbar: Toolbar
+  }
+};
+
+</script>
 
 <style lang="scss">
 #app {
