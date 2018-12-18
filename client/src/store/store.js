@@ -1,4 +1,4 @@
-// import createPersistedState from 'vuex-persistedstate'
+import createPersistedState from 'vuex-persistedstate'; //Used for the user to login automatically
 import Vue from 'vue';
 import Vuex from 'vuex';
 import authentication from './authentication';
@@ -23,7 +23,8 @@ export default new Vuex.Store({
   actions: {
 
   },
-  // plugins: [
-  //   createPersistedState()
-  // ]
+  //Used for the user to login automatically
+  plugins: [
+    createPersistedState()
+  ]
 });
